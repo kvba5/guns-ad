@@ -1,4 +1,9 @@
 # 🔫 guns-ad
+
+[![GitHub Release](https://img.shields.io/github/v/release/kvba5/guns-ad?label=download)](https://github.com/kvba5/guns-ad/releases/latest)
+![GitHub Repo stars](https://img.shields.io/github/stars/kvba5/guns-ad)
+![GitHub forks](https://img.shields.io/github/forks/kvba5/guns-ad)
+
 **⚠️ WARNING: The tool can be considered as "Self-bot" or "User-bot" which is against [Discord's TOS](https://dis.gd/tos)! Please use at your own risk! I'm not responsible for any account suspensions caused by this tool or any misuse of it.**  
 
 Simple CLI tool for automating the message sending on `#bio-links` channel on [guns.lol](https://guns.lol/guns) Discord server
