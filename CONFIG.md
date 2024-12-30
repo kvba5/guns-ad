@@ -15,5 +15,6 @@ Arguments are provided after the `./guns-ad` part of command.
 | Name(s) | Description | Required | Default |
 |:---:|:---:|:---:|:---:|
 | `--config` `-c` | Location of your config file. | `❌` | `config.toml` |
+| `--channel` | Custom channel ID the message gonna be sent to.<br><br>Should be used only when default value is deprecated and doesn't work. | `❌` | `1145771692099121206` |
 
 You can also check arguments by using `-h` or `--help`

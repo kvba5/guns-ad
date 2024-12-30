@@ -417,6 +417,7 @@ version = "1.0.0"
 dependencies = [
  "anyhow",
  "clap",
+ "rand",
  "reqwest",
  "serde",
  "serde_json",

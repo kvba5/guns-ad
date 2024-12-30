@@ -71,7 +71,12 @@ impl Config {
             .map_err(|why| anyhow!("{why}\n\nCould not check existance of a config file. Please ensure you have all needed permissions!"))?;
 
         if exists {
-            let raw = fs::read_to_string(&config_path)?;
+            let mut raw = fs::read_to_string(&config_path)?;
+
+            if raw.contains("\\") {
+                println!("CONFIG WARNING: Please remember to escape backslashes in config! (\\ -> \\\\) to avoid potential errors!");
+                raw = raw.replace("\\", "\\\\");
+            }
 
             let config = toml::from_str::<Self>(&raw)
                 .map_err(|why| anyhow!("{why}\n\nCould not read config file! Is it valid?\n(Removing config will generate new default one)"))?;
