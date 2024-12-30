@@ -6,7 +6,7 @@ edition = "2021"
 license = "MIT"
 
 [dependencies]
-anyhow = "1.0.94"
+anyhow = "1.0.95"
 clap = { version = "4.5.23", features = [ "derive" ] }
 reqwest = { version = "0.12.9", features = [ "gzip", "brotli", "deflate", "rustls-tls" ] }
 serde = { version = "1.0.216", features = [ "derive" ] }
