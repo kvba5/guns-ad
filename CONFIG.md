@@ -16,5 +16,7 @@ Arguments are provided after the `./guns-ad` part of command.
 |:---:|:---:|:---:|:---:|
 | `--config` `-c` | Location of your config file. | `❌` | `config.toml` |
 | `--channel` | Custom channel ID the message gonna be sent to.<br><br>Should be used only when default value is deprecated and doesn't work. | `❌` | `1145771692099121206` |
+| `--force-react` | Enables default Guns message reaction even when using custom channel ID, you might consider having this off when having no nitro. | `❌` | `❌` |
+| `--reaction` | Valid reaction string to use instead of default Upvote one (useful when having `--force-react` set).<br><br>**Valid strings:**<br>Emoji: `😂` (just an emoji)<br>Custom: `name:id`<br>Animated Custom: `a:name:id` | `❌` | `upvote:1185979066466181162` |
 
 You can also check arguments by using `-h` or `--help`

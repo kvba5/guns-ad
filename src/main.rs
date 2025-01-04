@@ -6,7 +6,8 @@ use rand::{rngs::ThreadRng, Rng};
 
 mod helper;
 
-const UPVOTE_EMOJI_ID: &str = "upvote:1185979066466181162";
+const DEFAULT_CHANNEL_ID: &str = "1145771692099121206";
+const DEFAULT_REACTION_ID: &str = "upvote:1185979066466181162";
 const DEFAULT_DELAY: u8 = 60; // 60 seconds by default
 
 #[derive(Parser, Debug)]
@@ -17,8 +18,16 @@ struct Args {
     config: String,
 
     /// Custom channel ID, only useful if old channel has been removed and default value is deprecated.
-    #[arg(long = "channel", value_name = "CHANNEL_ID", default_value = "1145771692099121206")]
-    channel_id: String
+    #[arg(long = "channel", value_name = "CHANNEL_ID", default_value = DEFAULT_CHANNEL_ID)]
+    channel_id: String,
+
+    /// Enables default message reaction even when using custom channel ID
+    #[arg(long = "force-react", action)]
+    force_react: bool,
+
+    /// Valid reaction string to use instead of default Upvote one (useful when having --force-react to true)
+    #[arg(long = "reaction", default_value = DEFAULT_REACTION_ID)]
+    reaction: String
 }
 
 #[tokio::main]
@@ -65,7 +74,9 @@ async fn main() -> Result<()> {
     loop {
         let r = channel_instance.send_message(&txt).await?;
         if let Some(message) = r.msg {
-            message.react(UPVOTE_EMOJI_ID).await?;
+            if &args.channel_id == DEFAULT_CHANNEL_ID || args.force_react == true {
+                message.react(&args.reaction).await?;
+            }
         } else {
             slowmode_remaining = r.slowmode;
         }
