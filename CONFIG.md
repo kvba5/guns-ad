@@ -10,7 +10,7 @@ By default, config file resides in the same directory as the executable as `conf
 | `msg_path` | Path to the text file including message bot will send! | `✅` | `"msg.txt"` |
 
 ## Arguments
-Arguments are provided after the `./guns-ad` part of command.
+Arguments are provided after the `./guns-ad[.exe]` part of command.
 
 | Name(s) | Description | Required | Default |
 |:---:|:---:|:---:|:---:|

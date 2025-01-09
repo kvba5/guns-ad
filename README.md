@@ -15,7 +15,9 @@ At first run of the script you will see new file `config.toml`, this file includ
 
 After you fill everything up, just run the command with this command:
 ```bash
-$ ./guns-ad [optional arguments]
+$ ./guns-ad [optional arguments] # on Linux
+# or
+$ .\guns-ad.exe [optional arguments] # on Windows
 ```
 (Existing command arguments can also be found in [CONFIG.md](/CONFIG.md))
 
